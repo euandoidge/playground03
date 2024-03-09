@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+<h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
 
-<h1>My First JavaScript</h1>
+<button onclick="getLocation()">Try It</button>
 
-<p>JavaScript can change the content of an HTML element:</p>
-
-<button type="button" onclick="myFunction()">Click Me!</button>
-
-<p id="demo">This is a demonstration.</p>
+<p id="demo"></p>
 
 <script>
-function myFunction() { 
-  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
 }
 </script>
 
