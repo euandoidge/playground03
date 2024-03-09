@@ -25,7 +25,7 @@ function success(pos) {
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
   console.log(`More or less ${crd.accuracy} meters.`);
-  
+  x.innerHTML = "Latitude: " + crd.latitude + "<br>Longitude: " + crd.longitude;
 }
 
 function error(err) {
@@ -35,7 +35,7 @@ function error(err) {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 
-  x.innerHTML = "Latitude: " + crd.latitude + "<br>Longitude: " + crd.longitude;
+  
 
 </script>
 
