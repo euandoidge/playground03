@@ -33,6 +33,8 @@ function error(err) {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
 
 </script>
 
