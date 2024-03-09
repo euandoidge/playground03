@@ -32,16 +32,13 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-navigator.geolocation.getCurrentPosition(success, error, options);
 
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}
 
 </script>
 
-
-
-  <button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
 
 
 </body>
